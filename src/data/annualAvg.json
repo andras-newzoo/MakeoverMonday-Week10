@@ -1,0 +1,572 @@
+[
+  {
+    "isFistula": 0,
+    "year": 1960,
+    "lifeExp": 61.4
+  },
+  {
+    "isFistula": 1,
+    "year": 1960,
+    "lifeExp": 42.3
+  },
+  {
+    "isFistula": 0,
+    "year": 1961,
+    "lifeExp": 62
+  },
+  {
+    "isFistula": 1,
+    "year": 1961,
+    "lifeExp": 42.7
+  },
+  {
+    "isFistula": 0,
+    "year": 1962,
+    "lifeExp": 62.4
+  },
+  {
+    "isFistula": 1,
+    "year": 1962,
+    "lifeExp": 43.1
+  },
+  {
+    "isFistula": 0,
+    "year": 1963,
+    "lifeExp": 62.7
+  },
+  {
+    "isFistula": 1,
+    "year": 1963,
+    "lifeExp": 43.5
+  },
+  {
+    "isFistula": 0,
+    "year": 1964,
+    "lifeExp": 63.3
+  },
+  {
+    "isFistula": 1,
+    "year": 1964,
+    "lifeExp": 44
+  },
+  {
+    "isFistula": 0,
+    "year": 1965,
+    "lifeExp": 63.7
+  },
+  {
+    "isFistula": 1,
+    "year": 1965,
+    "lifeExp": 44.4
+  },
+  {
+    "isFistula": 0,
+    "year": 1966,
+    "lifeExp": 64.2
+  },
+  {
+    "isFistula": 1,
+    "year": 1966,
+    "lifeExp": 44.8
+  },
+  {
+    "isFistula": 0,
+    "year": 1967,
+    "lifeExp": 64.6
+  },
+  {
+    "isFistula": 1,
+    "year": 1967,
+    "lifeExp": 45.2
+  },
+  {
+    "isFistula": 0,
+    "year": 1968,
+    "lifeExp": 65
+  },
+  {
+    "isFistula": 1,
+    "year": 1968,
+    "lifeExp": 45.7
+  },
+  {
+    "isFistula": 0,
+    "year": 1969,
+    "lifeExp": 65.4
+  },
+  {
+    "isFistula": 1,
+    "year": 1969,
+    "lifeExp": 46.1
+  },
+  {
+    "isFistula": 0,
+    "year": 1970,
+    "lifeExp": 65.9
+  },
+  {
+    "isFistula": 1,
+    "year": 1970,
+    "lifeExp": 46.6
+  },
+  {
+    "isFistula": 0,
+    "year": 1971,
+    "lifeExp": 66.2
+  },
+  {
+    "isFistula": 1,
+    "year": 1971,
+    "lifeExp": 47
+  },
+  {
+    "isFistula": 0,
+    "year": 1972,
+    "lifeExp": 66.6
+  },
+  {
+    "isFistula": 1,
+    "year": 1972,
+    "lifeExp": 47.4
+  },
+  {
+    "isFistula": 0,
+    "year": 1973,
+    "lifeExp": 67.1
+  },
+  {
+    "isFistula": 1,
+    "year": 1973,
+    "lifeExp": 47.8
+  },
+  {
+    "isFistula": 0,
+    "year": 1974,
+    "lifeExp": 67.4
+  },
+  {
+    "isFistula": 1,
+    "year": 1974,
+    "lifeExp": 48.1
+  },
+  {
+    "isFistula": 0,
+    "year": 1975,
+    "lifeExp": 67.8
+  },
+  {
+    "isFistula": 1,
+    "year": 1975,
+    "lifeExp": 48.5
+  },
+  {
+    "isFistula": 0,
+    "year": 1976,
+    "lifeExp": 68.2
+  },
+  {
+    "isFistula": 1,
+    "year": 1976,
+    "lifeExp": 48.9
+  },
+  {
+    "isFistula": 0,
+    "year": 1977,
+    "lifeExp": 68.6
+  },
+  {
+    "isFistula": 1,
+    "year": 1977,
+    "lifeExp": 49.3
+  },
+  {
+    "isFistula": 0,
+    "year": 1978,
+    "lifeExp": 69
+  },
+  {
+    "isFistula": 1,
+    "year": 1978,
+    "lifeExp": 49.7
+  },
+  {
+    "isFistula": 0,
+    "year": 1979,
+    "lifeExp": 69.3
+  },
+  {
+    "isFistula": 1,
+    "year": 1979,
+    "lifeExp": 50.3
+  },
+  {
+    "isFistula": 0,
+    "year": 1980,
+    "lifeExp": 69.7
+  },
+  {
+    "isFistula": 1,
+    "year": 1980,
+    "lifeExp": 50.8
+  },
+  {
+    "isFistula": 0,
+    "year": 1981,
+    "lifeExp": 70
+  },
+  {
+    "isFistula": 1,
+    "year": 1981,
+    "lifeExp": 51.3
+  },
+  {
+    "isFistula": 0,
+    "year": 1982,
+    "lifeExp": 70.4
+  },
+  {
+    "isFistula": 1,
+    "year": 1982,
+    "lifeExp": 51.8
+  },
+  {
+    "isFistula": 0,
+    "year": 1983,
+    "lifeExp": 70.7
+  },
+  {
+    "isFistula": 1,
+    "year": 1983,
+    "lifeExp": 52.3
+  },
+  {
+    "isFistula": 0,
+    "year": 1984,
+    "lifeExp": 71
+  },
+  {
+    "isFistula": 1,
+    "year": 1984,
+    "lifeExp": 52.7
+  },
+  {
+    "isFistula": 0,
+    "year": 1985,
+    "lifeExp": 71.3
+  },
+  {
+    "isFistula": 1,
+    "year": 1985,
+    "lifeExp": 53.1
+  },
+  {
+    "isFistula": 0,
+    "year": 1986,
+    "lifeExp": 71.7
+  },
+  {
+    "isFistula": 1,
+    "year": 1986,
+    "lifeExp": 53.4
+  },
+  {
+    "isFistula": 0,
+    "year": 1987,
+    "lifeExp": 71.9
+  },
+  {
+    "isFistula": 1,
+    "year": 1987,
+    "lifeExp": 53.7
+  },
+  {
+    "isFistula": 0,
+    "year": 1988,
+    "lifeExp": 72.2
+  },
+  {
+    "isFistula": 1,
+    "year": 1988,
+    "lifeExp": 53.8
+  },
+  {
+    "isFistula": 0,
+    "year": 1989,
+    "lifeExp": 72.5
+  },
+  {
+    "isFistula": 1,
+    "year": 1989,
+    "lifeExp": 54
+  },
+  {
+    "isFistula": 0,
+    "year": 1990,
+    "lifeExp": 72.7
+  },
+  {
+    "isFistula": 1,
+    "year": 1990,
+    "lifeExp": 54.1
+  },
+  {
+    "isFistula": 0,
+    "year": 1991,
+    "lifeExp": 73
+  },
+  {
+    "isFistula": 1,
+    "year": 1991,
+    "lifeExp": 54.1
+  },
+  {
+    "isFistula": 0,
+    "year": 1992,
+    "lifeExp": 73.1
+  },
+  {
+    "isFistula": 1,
+    "year": 1992,
+    "lifeExp": 54.2
+  },
+  {
+    "isFistula": 0,
+    "year": 1993,
+    "lifeExp": 73.3
+  },
+  {
+    "isFistula": 1,
+    "year": 1993,
+    "lifeExp": 54.2
+  },
+  {
+    "isFistula": 0,
+    "year": 1994,
+    "lifeExp": 73.6
+  },
+  {
+    "isFistula": 1,
+    "year": 1994,
+    "lifeExp": 54.3
+  },
+  {
+    "isFistula": 0,
+    "year": 1995,
+    "lifeExp": 73.8
+  },
+  {
+    "isFistula": 1,
+    "year": 1995,
+    "lifeExp": 54.4
+  },
+  {
+    "isFistula": 0,
+    "year": 1996,
+    "lifeExp": 74
+  },
+  {
+    "isFistula": 1,
+    "year": 1996,
+    "lifeExp": 54.6
+  },
+  {
+    "isFistula": 0,
+    "year": 1997,
+    "lifeExp": 74.2
+  },
+  {
+    "isFistula": 1,
+    "year": 1997,
+    "lifeExp": 54.7
+  },
+  {
+    "isFistula": 0,
+    "year": 1998,
+    "lifeExp": 74.5
+  },
+  {
+    "isFistula": 1,
+    "year": 1998,
+    "lifeExp": 54.9
+  },
+  {
+    "isFistula": 0,
+    "year": 1999,
+    "lifeExp": 74.6
+  },
+  {
+    "isFistula": 1,
+    "year": 1999,
+    "lifeExp": 55.1
+  },
+  {
+    "isFistula": 0,
+    "year": 2000,
+    "lifeExp": 74.9
+  },
+  {
+    "isFistula": 1,
+    "year": 2000,
+    "lifeExp": 55.3
+  },
+  {
+    "isFistula": 0,
+    "year": 2001,
+    "lifeExp": 75.3
+  },
+  {
+    "isFistula": 1,
+    "year": 2001,
+    "lifeExp": 55.6
+  },
+  {
+    "isFistula": 0,
+    "year": 2002,
+    "lifeExp": 75.5
+  },
+  {
+    "isFistula": 1,
+    "year": 2002,
+    "lifeExp": 55.9
+  },
+  {
+    "isFistula": 0,
+    "year": 2003,
+    "lifeExp": 75.7
+  },
+  {
+    "isFistula": 1,
+    "year": 2003,
+    "lifeExp": 56.4
+  },
+  {
+    "isFistula": 0,
+    "year": 2004,
+    "lifeExp": 76
+  },
+  {
+    "isFistula": 1,
+    "year": 2004,
+    "lifeExp": 56.9
+  },
+  {
+    "isFistula": 0,
+    "year": 2005,
+    "lifeExp": 76.2
+  },
+  {
+    "isFistula": 1,
+    "year": 2005,
+    "lifeExp": 57.5
+  },
+  {
+    "isFistula": 0,
+    "year": 2006,
+    "lifeExp": 76.5
+  },
+  {
+    "isFistula": 1,
+    "year": 2006,
+    "lifeExp": 58.2
+  },
+  {
+    "isFistula": 0,
+    "year": 2007,
+    "lifeExp": 76.7
+  },
+  {
+    "isFistula": 1,
+    "year": 2007,
+    "lifeExp": 58.9
+  },
+  {
+    "isFistula": 0,
+    "year": 2008,
+    "lifeExp": 77
+  },
+  {
+    "isFistula": 1,
+    "year": 2008,
+    "lifeExp": 59.6
+  },
+  {
+    "isFistula": 0,
+    "year": 2009,
+    "lifeExp": 77.2
+  },
+  {
+    "isFistula": 1,
+    "year": 2009,
+    "lifeExp": 60.3
+  },
+  {
+    "isFistula": 0,
+    "year": 2010,
+    "lifeExp": 77.5
+  },
+  {
+    "isFistula": 1,
+    "year": 2010,
+    "lifeExp": 61
+  },
+  {
+    "isFistula": 0,
+    "year": 2011,
+    "lifeExp": 77.8
+  },
+  {
+    "isFistula": 1,
+    "year": 2011,
+    "lifeExp": 61.7
+  },
+  {
+    "isFistula": 0,
+    "year": 2012,
+    "lifeExp": 78
+  },
+  {
+    "isFistula": 1,
+    "year": 2012,
+    "lifeExp": 62.3
+  },
+  {
+    "isFistula": 0,
+    "year": 2013,
+    "lifeExp": 78.1
+  },
+  {
+    "isFistula": 1,
+    "year": 2013,
+    "lifeExp": 62.9
+  },
+  {
+    "isFistula": 0,
+    "year": 2014,
+    "lifeExp": 78.4
+  },
+  {
+    "isFistula": 1,
+    "year": 2014,
+    "lifeExp": 63.4
+  },
+  {
+    "isFistula": 0,
+    "year": 2015,
+    "lifeExp": 78.5
+  },
+  {
+    "isFistula": 1,
+    "year": 2015,
+    "lifeExp": 63.9
+  },
+  {
+    "isFistula": 0,
+    "year": 2016,
+    "lifeExp": 78.7
+  },
+  {
+    "isFistula": 1,
+    "year": 2016,
+    "lifeExp": 64.3
+  }
+]
