@@ -18,7 +18,7 @@ class BarChart extends Component {
 
   componentDidUpdate(prevProps){
 
-        const { yKey } = this.props
+        const { yKey} = this.props
 
         if(prevProps.width === 3000 ) {this.initVis()}
         else if (prevProps.width !== this.props.width) {this.updateDims()}
@@ -36,6 +36,7 @@ class BarChart extends Component {
           { data, height, width, margin, chartClass, xKey, yKey, colorRange, secondaryColorRange, colorDomain, maxY, padding, transition } = this.props,
           { start, delay } = transition,
           { chartWidth, chartHeight } =    updateSvg( svg , height, width, margin )
+
 
 
     svg.append('g')
@@ -110,24 +111,20 @@ class BarChart extends Component {
 
   updateData(){
 
-    const svg = select(this.node),
-          { data, chartClass, yKey, transition } = this.props,
-          { long, delay } = transition
-
-    this.xScale.domain(data.map(d => d.isFistula))
+    const { data, chartClass, yKey, transition } = this.props,
+          { long } = transition
 
     this.chartArea.selectAll(`.${chartClass}-rect`)
               .data(data)
               .transition('rect-update')
               .duration(long)
-              .delay((d,i) => i * delay)
+              .attr('height', d => this.yScale(0) - this.yScale(d[yKey]))
               .attr('y', d => this.yScale(d[yKey]))
 
     this.chartArea.selectAll(`.${chartClass}-text`)
               .data(data)
               .transition('text-update')
               .duration(long)
-              .delay((d,i) => i * delay)
               .attr('y', d => this.yScale(d[yKey]))
               .tween("text", function(d) {
 

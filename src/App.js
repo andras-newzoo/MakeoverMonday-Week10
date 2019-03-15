@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { select } from 'd3-selection'
 import './App.css';
-import * as _ from 'lodash'
 
-import {ArcChart, BarChart, Header} from './components'
+import {ArcChart, BarChart} from './components'
 
 import { List, Accordion, Icon } from 'semantic-ui-react'
 
 import countryData from './data/countryData.json'
 import annualAvg from './data/annualAvg.json'
+
+
+
 
 class App extends Component {
   constructor(props){
@@ -17,12 +18,14 @@ class App extends Component {
         filter : 2016,
         container : {
           height : undefined,
-          width: 10000,
-
+          width: 10000
+        },
         activeIndex: 2
-    }}
+    }
+
   this.handleResize = this.handleResize.bind(this)
   this.handleClick = this.handleClick.bind(this)
+  this.handleSliderChange = this.handleSliderChange.bind(this)
   }
 
   componentDidMount(){
@@ -31,6 +34,16 @@ class App extends Component {
     this.handleResize()
 
   }
+
+
+  handleSliderChange(e){
+    let value = e.target.value,
+        copy = {...this.state}
+
+    copy.filter = value
+    this.setState( copy )
+  }
+
 
   handleResize() {
   this.setState({
@@ -48,13 +61,14 @@ class App extends Component {
           newIndex = activeIndex === index ? -1 : index
 
    this.setState({ activeIndex: newIndex })
-  }
 
+  }
 
 
   render() {
 
     const   { filter, container, activeIndex  } = this.state,
+            { value } = this.props,
             { width, height } = container,
             filteredAnnualAvg = annualAvg.filter(d => d.year === +filter),
             filteredCountryData = countryData.filter(d => d.year === +filter),
@@ -97,6 +111,13 @@ class App extends Component {
             </Accordion>
             </div>
           </div>
+          <div className="range-container">
+            <form action="#">
+              <p className="range-field">
+                <input id='range' type="range" min="1960" max="2016" onChange={this.handleSliderChange}/>
+              </p>
+            </form>
+          </div>
         <div className="App" ref={parent => (this.container = parent)}>
             <div className='archart-container'>
               <ArcChart
@@ -104,6 +125,8 @@ class App extends Component {
                 chartClass = {'arcchart'}
                 height = {height}
                 width = {width * .7}
+                xKey = {'lifeExp'}
+                colorKey = {'isFistula'}
                 colorRange = {['#33332D', '#B2431A']}
                 colorDomain = {colorDomain}
                 maxX = {92}
@@ -136,6 +159,10 @@ class App extends Component {
       </div>
     );
   }
+}
+
+App.defaultProps = {
+
 }
 
 export default App;
