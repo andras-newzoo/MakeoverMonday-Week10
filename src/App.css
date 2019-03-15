@@ -1,1 +1,160 @@
+/*
+font-family: futura-pt,sans-serif;
+font-weight: 400;
+font-style: normal;
 
+font-family: futura-pt,sans-serif;
+font-weight: 300;
+font-style: normal;
+
+font-family: futura-pt-condensed,sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: futura-pt-condensed,sans-serif;
+font-weight: 800;
+font-style: normal; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: futura-pt, sans-serif ;
+  text-rendering: geometricPrecision;
+}
+
+text,
+h1,
+h2 {
+  pointer-events: none;
+}
+
+h1 {
+
+}
+
+h1 {
+  font-size: 96px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: futura-pt, sans-serif ;
+    line-height: 60px;
+    letter-spacing: 4px;
+  color: #33332D;
+}
+
+h2 {
+  font-size: 120px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: futura-pt-condensed, sans-serif ;
+  line-height: 80px;
+  letter-spacing: 27px;
+    color: #B2431A !important;
+}
+
+.chart-container {
+  width: 90vw;
+  min-width: 1200px;
+  min-height: 700px;
+  margin: 0 auto;
+  top: 10vh;
+  transform: translate(0, 5vh);
+}
+
+.graph-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0
+}
+
+.header-container {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  top: 0;
+}
+
+#title {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#accordion {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  top: 0;
+  left: 60%;
+  color: #33332D !important;
+}
+
+#credit {
+  position: absolute;
+  width: 100%;
+  height: 2%;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.App {
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  top: 30%;
+}
+
+.archart-container {
+  position: absolute;
+  display: inline-block;
+  width: 70%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.barchart-container {
+  position: absolute;
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 70%;
+}
+
+.range-container{
+  position: absolute;
+  width: 100%;
+  height: 3%;
+  top: 25%;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 15px;
+    width: 15px;
+    background: goldenrod;
+    background-color:  #B2431A !important;
+    border-radius: 100 !important;
+}
+
+input[type=range]+.thumb {
+    background-color: #B2431A !important;
+}
+
+.thumb span {
+  position: absolute;
+  top: -2px !important;
+
+  left: 1px !important;
+}
+
+#accordion li {
+  margin-left: 15px;
+}
