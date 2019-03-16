@@ -49,7 +49,7 @@ h2 {
   font-weight: 800;
   font-family: futura-pt-condensed, sans-serif ;
   line-height: 80px;
-  letter-spacing: 27px;
+  letter-spacing: 26px;
     color: #B2431A !important;
 }
 
@@ -90,6 +90,40 @@ h2 {
   height: 100%;
   top: 0;
   left: 60%;
+  color: #33332D !important;
+}
+
+#accordion span,
+#accordion a {
+  font-weight: 800;
+  color: #B2431A !important
+}
+
+#accordion #legend {
+  font-weight: 800;
+  color: #B2431A !important;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  z-index: -99;
+  letter-spacing: .3px;
+}
+
+#accordion #drag-me {
+  position: absolute;
+  right: 6px;
+  bottom: -40px;
+  z-index: -99;
+  letter-spacing: .3px;
+}
+
+#accordion #divider {
+  font-weight: 300;
+  color: #33332D !important;
+}
+
+#accordion #not {
+  font-weight: 800;
   color: #33332D !important;
 }
 
@@ -140,11 +174,13 @@ input[type=range]::-webkit-slider-thumb {
     height: 20px;
     width: 20px;
     transform: translate(0, -3px);
-    background: goldenrod;
     background-color:  #B2431A !important;
     border-radius: 100 !important;
 }
 
+.item::before{
+  color: !33332D !important;
+}
 
 #accordion li {
   margin-left: 15px;

@@ -8,13 +8,10 @@ import { scaleBand, scaleLinear, scaleOrdinal } from 'd3-scale'
 import { interpolateNumber } from 'd3-interpolate'
 import './BarChart.css'
 
-import { updateSvg } from './functionsBarChart'
+import { } from './functionsBarChart'
+import { updateSvg, appendArea} from '../chartFunctions'
 
 class BarChart extends Component {
-
-  componentDidMount(){
-
-  }
 
   componentDidUpdate(prevProps){
 
@@ -37,14 +34,8 @@ class BarChart extends Component {
           { start, delay } = transition,
           { chartWidth, chartHeight } =    updateSvg( svg , height, width, margin )
 
-
-
-    svg.append('g')
-        .attr('class', `${chartClass}-chart-area`)
-        .attr('transform', `translate(${margin.left}, ${margin.top})`)
-    svg.append('g')
-        .attr('class', `${chartClass}-x-axis x-axis`)
-        .attr('transform', `translate(${margin.left}, ${margin.top + chartHeight})`)
+    appendArea(svg,`${chartClass}-chart-area`, margin.left, margin.top )
+    appendArea(svg,`${chartClass}-x-axis x-axis`, margin.left, margin.top + chartHeight )
 
     this.chartArea = select(`.${chartClass}-chart-area`)
     this.xScale = scaleBand().range([0, chartWidth]).domain(data.map(d => d[xKey])).padding(+padding)
@@ -132,7 +123,6 @@ class BarChart extends Component {
                           i = interpolateNumber(+that.text(), d[yKey]);
                     return function(t) {that.text(format('.1f')(i(t)))};
                   })
-
   }
 
   updateDims(){
@@ -157,7 +147,6 @@ class BarChart extends Component {
 
     this.chartArea.select('.bar-chart-title')
         .attr('x', chartWidth/2)
-
 
   }
 

@@ -4,17 +4,14 @@ import './ArcChart.css'
 import { select } from 'd3-selection'
 import { scaleLinear, scaleOrdinal } from 'd3-scale'
 import { axisBottom } from 'd3-axis'
+import { format } from 'd3-format'
 import { max, min } from 'd3-array'
 
 import {} from './functionsArcChart'
 import { updateSvg, appendArea} from '../chartFunctions'
+import { interpolateNumber } from 'd3-interpolate'
 
 class ArcChart extends Component {
-
-  componentDidMount(){
-
-
-  }
 
   componentDidUpdate(prevProps){
 
@@ -26,8 +23,8 @@ class ArcChart extends Component {
         this.updateDims()
     }
 
-    if(max(prevProps.data, d => d[xKey]) !== max(this.props.data, d => d[xKey]) ||
-      min(prevProps.data, d => d[xKey]) !== min(this.props.data, d => d[xKey]))
+    if(max(prevProps.data, d => d[xKey]) !== max(data, d => d[xKey]) ||
+      min(prevProps.data, d => d[xKey]) !== min(data, d => d[xKey]))
       {this.updateData()}
 
 
@@ -36,7 +33,7 @@ class ArcChart extends Component {
 
   initVis(){
     const svg = select(this.node),
-          { data, height, margin, width, chartClass, maxX, colorRange, colorDomain, transition, xKey, colorKey} = this.props,
+          { data, height, margin, width, chartClass, maxX, colorRange, colorDomain, transition, xKey, colorKey, filter} = this.props,
           { start, delay } = transition,
           { chartWidth, chartHeight } = updateSvg( svg , height, width, margin )
 
@@ -57,6 +54,26 @@ class ArcChart extends Component {
     xAxis.call(axisBottom(this.xScale).tickSizeOuter(0).tickSizeInner(3))
     xAxis.selectAll('.tick line').remove()
     xAxis.select('.domain').attr('stroke', '#33332D')
+
+    svg.append('text')
+          .attr('class', 'year-display')
+          .attr('x', 0)
+          .attr('y', 70)
+          .attr('fill', '#33332D')
+          .text(filter)
+          .attr('text-anchor', 'start')
+          .attr('font-size', '96px')
+          .attr('font-weight', '300')
+          .attr('letter-spacing', '4px')
+
+    this.chartArea.append('text')
+          .attr('class', 'arc-chart-title')
+          .attr('x', chartWidth/2)
+          .attr('y', 2)
+          .attr('fill', '#33332D')
+          .text('Female Life Expectancy per Country')
+          .attr('text-anchor', 'middle')
+          .attr('font-size', '1rem')
 
     paths
           .enter()
@@ -83,9 +100,20 @@ class ArcChart extends Component {
   updateData(){
 
     const svg = select(this.node),
-          { height, margin, width, data, xKey, colorKey} = this.props,
+          { height, margin, width, data, xKey, colorKey, transition, filter} = this.props,
+          { long } = transition,
           { chartHeight } = updateSvg( svg , height, width, margin ),
           paths = this.chartArea.selectAll('path').data(data)
+
+
+  svg.select(`.year-display`)
+            .transition('year-update')
+            .duration(long)
+            .tween("text", function() {
+                  const that = select(this),
+                        i = interpolateNumber(+that.text(), filter);
+                  return function(t) {that.text(format('.0f')(i(t)))};
+                })
 
     paths.exit().remove()
 
@@ -113,10 +141,10 @@ class ArcChart extends Component {
   }
 
   updateDims(){
+    
     const svg = select(this.node),
           { height, margin, width, chartClass } = this.props,
           { chartWidth, chartHeight } = updateSvg( svg , height, width, margin )
-
 
     this.chartArea = svg.select(`.${chartClass}-chart-area`)
 
@@ -136,6 +164,8 @@ class ArcChart extends Component {
               this.xScale(0) < this.xScale(d.lifeExp) ? 1 : 0, this.xScale(d.lifeExp), ',', chartHeight]
               .join(' ');
           })
+
+    this.chartArea.select('.arc-chart-title').attr('x', chartWidth/2)
 
   }
 
