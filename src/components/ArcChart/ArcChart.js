@@ -66,7 +66,6 @@ class ArcChart extends Component {
           .attr('font-weight', '300')
           .attr('letter-spacing', '4px')
 
-          .attr('y', 2)
     appendTitle(this.chartArea, 'arc-chart-title', chartWidth/2, 2, 'Female Life Expectancy per Country')
 
     createUpdateArc(paths, chartHeight, this.xScale, xKey, this.colorScale, colorKey, 'arcs-in', start, delay, 'arcs-out-start')
