@@ -6,10 +6,10 @@ import { scaleLinear, scaleOrdinal } from 'd3-scale'
 import { axisBottom } from 'd3-axis'
 import { format } from 'd3-format'
 import { max, min } from 'd3-array'
-
-import {} from './functionsArcChart'
-import { updateSvg, appendArea} from '../chartFunctions'
 import { interpolateNumber } from 'd3-interpolate'
+
+import { createUpdateArc } from './functionsArcChart'
+import { updateSvg, appendArea, appendTitle, moveTitle} from '../chartFunctions'
 
 class ArcChart extends Component {
 
@@ -66,34 +66,10 @@ class ArcChart extends Component {
           .attr('font-weight', '300')
           .attr('letter-spacing', '4px')
 
-    this.chartArea.append('text')
-          .attr('class', 'arc-chart-title')
-          .attr('x', chartWidth/2)
           .attr('y', 2)
-          .attr('fill', '#33332D')
-          .text('Female Life Expectancy per Country')
-          .attr('text-anchor', 'middle')
-          .attr('font-size', '1rem')
+    appendTitle(this.chartArea, 'arc-chart-title', chartWidth/2, 2, 'Female Life Expectancy per Country')
 
-    paths
-          .enter()
-          .append('path')
-          .attr('d', d => {
-            return ['M', this.xScale(0), chartHeight, 'A',
-              (this.xScale(0) - this.xScale(d[xKey]))/2, ',',
-              (this.xScale(0) - this.xScale(d[xKey]))/2, 0, 0, ',',
-              this.xScale(0) < this.xScale(d[xKey]) ? 1 : 0, this.xScale(d[xKey]), ',', chartHeight]
-              .join(' ');
-          })
-          .attr('stroke-width', 2)
-          .attr('stroke', d => this.colorScale(d[colorKey]))
-          .attr('fill', 'none')
-          .attr('stroke-opacity', 0)
-              .merge(paths)
-              .transition('paths-in')
-              .duration(start)
-              .delay((d,i) => i * delay)
-              .attr('stroke-opacity', 1)
+    createUpdateArc(paths, chartHeight, this.xScale, xKey, this.colorScale, colorKey, 'arcs-in', start, delay, 'arcs-out-start')
 
   }
 
@@ -115,33 +91,12 @@ class ArcChart extends Component {
                   return function(t) {that.text(format('.0f')(i(t)))};
                 })
 
-    paths.exit().remove()
-
-    paths.enter()
-          .append('path')
-          .attr('d', d => {
-            return ['M', this.xScale(0), chartHeight, 'A',
-              (this.xScale(0) - this.xScale(d[xKey]))/2, ',',
-              (this.xScale(0) - this.xScale(d[xKey]))/2, 0, 0, ',',
-              this.xScale(0) < this.xScale(d[xKey]) ? 1 : 0, this.xScale(d[xKey]), ',', chartHeight]
-              .join(' ');
-          })
-          .attr('stroke-width', 2)
-          .attr('stroke', d => this.colorScale(d[colorKey]))
-          .attr('fill', 'none')
-              .merge(paths)
-              .attr('d', d => {
-                  return ['M', this.xScale(0), chartHeight, 'A',
-                    (this.xScale(0) - this.xScale(d.lifeExp))/2, ',',
-                    (this.xScale(0) - this.xScale(d.lifeExp))/2, 0, 0, ',',
-                    this.xScale(0) < this.xScale(d.lifeExp) ? 1 : 0, this.xScale(d.lifeExp), ',', chartHeight]
-                    .join(' ');
-                })
+  createUpdateArc(paths, chartHeight, this.xScale, xKey, this.colorScale, colorKey, 'arcs-update', 0, 0, 'arcs-out')
 
   }
 
   updateDims(){
-    
+
     const svg = select(this.node),
           { height, margin, width, chartClass } = this.props,
           { chartWidth, chartHeight } = updateSvg( svg , height, width, margin )
@@ -165,7 +120,7 @@ class ArcChart extends Component {
               .join(' ');
           })
 
-    this.chartArea.select('.arc-chart-title').attr('x', chartWidth/2)
+    moveTitle(this.chartArea, 'arc-chart-title', chartWidth/2)
 
   }
 

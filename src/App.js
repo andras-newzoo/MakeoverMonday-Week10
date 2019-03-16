@@ -68,7 +68,6 @@ class App extends Component {
   render() {
 
     const   { filter, container, activeIndex  } = this.state,
-            { value } = this.props,
             { width, height } = container,
             filteredAnnualAvg = annualAvg.filter(d => d.year === +filter),
             filteredCountryData = countryData.filter(d => d.year === +filter),
@@ -102,9 +101,9 @@ class App extends Component {
                 <p>
                   Operation Fistula works to solve three problems:
                   <ul>
-                    <li>- That funding doesn’t reach the people who need it.</li>
-                    <li>- Organizations don’t collaborate well.</li>
-                    <li>- Fistula is seen as a low priority symptom.</li>
+                    <li>● That funding doesn’t reach the people who need it.</li>
+                    <li>● Organizations don’t collaborate well.</li>
+                    <li>● Fistula is seen as a low priority symptom.</li>
                   </ul>
                 </p>
               </Accordion.Content>
@@ -163,10 +162,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-App.defaultProps = {
-
 }
 
 export default App;

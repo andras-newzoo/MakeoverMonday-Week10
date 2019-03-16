@@ -1,4 +1,3 @@
-import {select} from 'd3-selection'
 
 const updateSvg  = ( svg, height, width, margin) => {
 

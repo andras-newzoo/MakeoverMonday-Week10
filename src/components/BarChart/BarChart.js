@@ -9,7 +9,7 @@ import { interpolateNumber } from 'd3-interpolate'
 import './BarChart.css'
 
 import { } from './functionsBarChart'
-import { updateSvg, appendArea} from '../chartFunctions'
+import { updateSvg, appendArea, appendTitle, moveTitle } from '../chartFunctions'
 
 class BarChart extends Component {
 
@@ -51,14 +51,7 @@ class BarChart extends Component {
     xAxis.selectAll('.tick').remove()
     xAxis.select('.domain').attr('stroke', '#33332D')
 
-          this.chartArea.append('text')
-                .attr('class', 'bar-chart-title')
-                .attr('x', chartWidth/2)
-                .attr('y', 2)
-                .attr('fill', '#33332D')
-                .text('Average Female Life Expectancy')
-                .attr('text-anchor', 'middle')
-                .attr('font-size', '1rem')
+    appendTitle(this.chartArea, 'bar-chart-title', chartWidth/2, 2, 'Average Female Life Expectancy' )
 
           rects.enter()
                 .append('rect')
@@ -118,7 +111,6 @@ class BarChart extends Component {
               .duration(long)
               .attr('y', d => this.yScale(d[yKey]))
               .tween("text", function(d) {
-
                     const that = select(this),
                           i = interpolateNumber(+that.text(), d[yKey]);
                     return function(t) {that.text(format('.1f')(i(t)))};
@@ -128,7 +120,7 @@ class BarChart extends Component {
   updateDims(){
 
     const   svg = select(this.node),
-            { height, width, margin, chartClass, padding, xKey , data} = this.props,
+            { height, width, margin, chartClass, padding, xKey } = this.props,
             { chartWidth } =    updateSvg( svg , height, width, margin ),
             xAxis = this.chartArea.select('.x-axis')
 
@@ -145,8 +137,7 @@ class BarChart extends Component {
 
     this.chartArea.selectAll(`.${chartClass}-text`).attr('x', d => this.xScale(d[xKey])+ this.xScale.bandwidth()/2)
 
-    this.chartArea.select('.bar-chart-title')
-        .attr('x', chartWidth/2)
+    moveTitle(this.chartArea, 'bar-chart-title', chartWidth/2)
 
   }
 

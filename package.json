@@ -2,6 +2,7 @@
   "name": "makeovermonday",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://boringbarchart.com/operation-fistula",
   "dependencies": {
     "d3": "^5.9.1",
     "lodash": "^4.17.11",

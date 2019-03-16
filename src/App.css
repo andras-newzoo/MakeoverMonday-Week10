@@ -181,7 +181,3 @@ input[type=range]::-webkit-slider-thumb {
 .item::before{
   color: !33332D !important;
 }
-
-#accordion li {
-  margin-left: 15px;
-}
